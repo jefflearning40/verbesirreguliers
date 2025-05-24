@@ -13,8 +13,8 @@ document.getElementById('translateButton').addEventListener('click', function() 
         }
     });
 
-    // Mettre à jour le contenu dynamique du modal
-    updateModalContent(!isFrench); // Inverser la logique ici
+    // Mettre à jour le contenu dynamique du modal "À propos"
+    updateAboutModalContent(!isFrench);
 
     var button = document.getElementById('translateButton');
     if (isFrench) {
@@ -26,7 +26,43 @@ document.getElementById('translateButton').addEventListener('click', function() 
     }
 });
 
-// Fonction pour mettre à jour le contenu du modal
+// Fonction pour mettre à jour le contenu du modal "À propos"
+function updateAboutModalContent(isFrench) {
+    var aboutModalTitle = document.getElementById('aboutModalLabel');
+    if (aboutModalTitle) {
+        if (isFrench) {
+            aboutModalTitle.textContent = aboutModalTitle.getAttribute('data-fr');
+        } else {
+            aboutModalTitle.textContent = aboutModalTitle.getAttribute('data-en');
+        }
+    }
+
+    var aboutModalBody = document.getElementById('aboutModalBody');
+    if (aboutModalBody) {
+        if (isFrench) {
+            aboutModalBody.textContent = "Ici, vous pouvez vous entraîner grâce au QCM chronométré ou lire le tableau des verbes irréguliers.";
+        } else {
+            aboutModalBody.textContent = "Here, you can practice using the timed quiz or read the irregular verbs table.";
+        }
+    }
+
+    var aboutModalCloseButton = document.querySelector('#aboutModal .btn-close-red');
+    if (aboutModalCloseButton) {
+        if (isFrench) {
+            aboutModalCloseButton.textContent = aboutModalCloseButton.getAttribute('data-fr');
+        } else {
+            aboutModalCloseButton.textContent = aboutModalCloseButton.getAttribute('data-en');
+        }
+    }
+}
+
+// Mettre à jour le contenu du modal "À propos" lors de l'ouverture
+$('#aboutModal').on('show.bs.modal', function (event) {
+    var isFrench = document.getElementById('translateButton').getAttribute('data-translate') === 'fr';
+    updateAboutModalContent(isFrench);
+});
+
+// Fonction pour mettre à jour le contenu du modal de message
 function updateModalContent(isFrench) {
     var messageModalBody = document.getElementById('messageModalBody');
     if (messageModalBody) {
