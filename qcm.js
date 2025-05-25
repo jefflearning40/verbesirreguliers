@@ -1,4 +1,3 @@
-// qcm.js
 document.addEventListener('DOMContentLoaded', function() {
     const quizContainer = document.getElementById('quizContainer');
     const progressContainer = document.getElementById('progressContainer');
@@ -52,13 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fonction pour afficher le sélecteur de niveau de difficulté
     function displayDifficultySelector() {
         quizContainer.innerHTML = `
-            <h3>Choisissez le niveau de difficulté</h3>
+            <h3 data-i18n="difficultyLevel">Choisissez le niveau de difficulté</h3>
             <select id="difficultySelector" class="form-control">
-                <option value="${difficultyLevels.easy}">Facile (20 secondes)</option>
-                <option value="${difficultyLevels.medium}">Moyen (10 secondes)</option>
-                <option value="${difficultyLevels.hard}">Difficile (5 secondes)</option>
+                <option value="${difficultyLevels.easy}" data-i18n="easy">Facile (20 secondes)</option>
+                <option value="${difficultyLevels.medium}" data-i18n="medium">Moyen (10 secondes)</option>
+                <option value="${difficultyLevels.hard}" data-i18n="hard">Difficile (5 secondes)</option>
             </select>
-            <button id="startButton" class="btn btn-primary">Commencer le QCM</button>
+            <button id="startButton" class="btn btn-primary" data-i18n="startQuiz">Commencer le QCM</button>
         `;
 
         // Ajouter un gestionnaire d'événements pour le bouton "Commencer le QCM"
@@ -118,15 +117,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const questionDiv = document.createElement('div');
         questionDiv.className = 'question';
         questionDiv.innerHTML = `
-            <h3>Question ${index + 1}: ${questionText}</h3>
+            <h3 data-i18n="question${index + 1}">Question ${index + 1}: ${questionText}</h3>
             <ul>
                 <li><input type="radio" name="q${index}" value="${correctAnswer}"> ${correctAnswer}</li>
                 <li><input type="radio" name="q${index}" value="${options[0]}"> ${options[0]}</li>
                 <li><input type="radio" name="q${index}" value="${options[1]}"> ${options[1]}</li>
             </ul>
-            <button id="nextButton" class="btn btn-primary" data-translate="fr" data-fr="Suivant" data-en="Next">Suivant</button>
-            <button id="quitButton" class="btn btn-secondary" data-translate="fr" data-fr="Abandonner" data-en="Quit">Abandonner</button>
-            <div id="timerDisplay">Temps restant: ${difficulty} secondes</div>
+            <button id="nextButton" class="btn btn-primary" data-i18n="next">Suivant</button>
+            <button id="quitButton" class="btn btn-secondary" data-i18n="quit">Abandonner</button>
+            <div id="timerDisplay" data-i18n="timeLeft">Temps restant: ${difficulty} secondes</div>
         `;
         quizContainer.appendChild(questionDiv);
 
@@ -142,24 +141,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     currentQuestionIndex++;
                     displayQuestion(currentQuestionIndex);
                 } else {
-                    quizContainer.innerHTML = '<h3>Fin du QCM !</h3>';
+                    quizContainer.innerHTML = '<h3 data-i18n="endOfQuiz">Fin du QCM !</h3>';
                 }
                 updateProgress();
             } else {
-                alert("Veuillez sélectionner une réponse.");
+                alert(i18next.t("pleaseSelectAnAnswer"));
             }
         });
 
         // Ajouter un gestionnaire d'événements pour le bouton "Abandonner"
         document.getElementById('quitButton').addEventListener('click', function() {
             Swal.fire({
-                title: 'Êtes-vous sûr ?',
-                text: "Vous ne pourrez pas revenir en arrière !",
+                title: i18next.t("areYouSure"),
+                text: i18next.t("youCannotGoBack"),
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Oui, abandonner !'
+                confirmButtonText: i18next.t("yesQuit")
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.href = 'qcm.html'; // Rediriger vers le menu initial du QCM
@@ -172,14 +171,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const timerDisplay = document.getElementById('timerDisplay');
         timer = setInterval(function() {
             timeLeft--;
-            timerDisplay.textContent = `Temps restant: ${timeLeft} secondes`;
+            timerDisplay.textContent = `${i18next.t("timeLeft")}: ${timeLeft} ${i18next.t("seconds")}`;
             if (timeLeft <= 0) {
                 clearInterval(timer);
                 if (currentQuestionIndex < shuffledVerbs.length - 1) {
                     currentQuestionIndex++;
                     displayQuestion(currentQuestionIndex);
                 } else {
-                    quizContainer.innerHTML = '<h3>Fin du QCM !</h3>';
+                    quizContainer.innerHTML = '<h3 data-i18n="endOfQuiz">Fin du QCM !</h3>';
                 }
                 updateProgress();
             }
@@ -196,13 +195,13 @@ document.addEventListener('DOMContentLoaded', function() {
         progressContainer.innerHTML = `
             <div class="progress" style="position: relative;">
                 <div class="progress-bar bg-info" role="progressbar" style="width: ${answeredPercentage}%; position: relative;" aria-valuenow="${answeredPercentage}" aria-valuemin="0" aria-valuemax="100">
-                    Questions répondues: ${answeredQuestions}/${totalQuestions} (${answeredPercentage.toFixed(2)}%)
+                    ${i18next.t("answeredQuestions")}: ${answeredQuestions}/${totalQuestions} (${answeredPercentage.toFixed(2)}%)
                     <div class="progress-taxi" style="left: ${answeredPercentage}%;"></div>
                 </div>
             </div>
             <div class="progress">
                 <div class="progress-bar bg-success" role="progressbar" style="width: ${correctPercentage}%" aria-valuenow="${correctPercentage}" aria-valuemin="0" aria-valuemax="100">
-                    Bonnes réponses: ${correctAnswers}/${answeredQuestions} (${correctPercentage.toFixed(2)}%)
+                    ${i18next.t("correctAnswers")}: ${correctAnswers}/${answeredQuestions} (${correctPercentage.toFixed(2)}%)
                 </div>
             </div>
         `;

@@ -1,4 +1,29 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
+    // Gestionnaire d'événements pour le lien "Exercices"
+    document.getElementById('showExercice').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('exerciceForm').style.display = 'block';
+        document.getElementById('inscriptionForm').style.display = 'none';
+        document.getElementById('connectionForm').style.display = 'none';
+    });
+
+    // Gestionnaire d'événements pour le lien "Inscription"
+    document.getElementById('showInscription').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('inscriptionForm').style.display = 'block';
+        document.getElementById('exerciceForm').style.display = 'none';
+        document.getElementById('connectionForm').style.display = 'none';
+    });
+
+    // Gestionnaire d'événements pour le lien "Connexion"
+    document.getElementById('showConnection').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('connectionForm').style.display = 'block';
+        document.getElementById('exerciceForm').style.display = 'none';
+        document.getElementById('inscriptionForm').style.display = 'none';
+    });
+
+    // Gestionnaire d'événements pour le formulaire d'inscription
     $('#inscriptionForm form').on('submit', function(event) {
         event.preventDefault(); // Empêche la soumission normale du formulaire
 
@@ -11,19 +36,15 @@ $(document).ready(function() {
 
         if (nom && email && adresse && telephone && rgpdConsent) {
             // Si le formulaire est valide, afficher un message de succès
-            $('#messageModalLabel').text('Succès').attr('data-fr', 'Succès').attr('data-en', 'Success');
-            $('#messageModalBody').text('Votre inscription a été enregistrée avec succès.').attr('data-fr', 'Votre inscription a été enregistrée avec succès.').attr('data-en', 'Your registration has been successfully recorded.');
+            $('#messageModalLabel').text('Succès');
+            $('#messageModalBody').text('Votre inscription a été enregistrée avec succès.');
             $('#messageModal').modal('show');
         } else {
             // Si le formulaire n'est pas valide, afficher un message d'erreur
-            $('#messageModalLabel').text('Erreur').attr('data-fr', 'Erreur').attr('data-en', 'Error');
-            $('#messageModalBody').text('Veuillez remplir tous les champs correctement et accepter le traitement de vos données.').attr('data-fr', 'Veuillez remplir tous les champs correctement et accepter le traitement de vos données.').attr('data-en', 'Please fill in all fields correctly and accept the processing of your data.');
+            $('#messageModalLabel').text('Erreur');
+            $('#messageModalBody').text('Veuillez remplir tous les champs correctement et accepter le traitement de vos données.');
             $('#messageModal').modal('show');
         }
-
-        // Mettre à jour le contenu du modal après l'affichage
-        var isFrench = document.querySelectorAll('[data-translate]')[0].getAttribute('data-translate') === 'fr';
-        updateModalContent(isFrench);
     });
 
     // Gestionnaire d'événements pour le bouton "Fermer" du modal
