@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     "send": "Envoyer",
                     "message": "Message",
                     "messageContent": "Contenu du message...",
-                    "copyright": "&copy; 2025 Mon Site. Tous droits réservés.",
+                    "copyright": " 2025 Mon Site. Tous droits réservés.",
                     "legalNotice": "Mentions légales",
                     "privacyPolicy": "Politique de confidentialité",
                     "contactUs": "Contactez-nous",
