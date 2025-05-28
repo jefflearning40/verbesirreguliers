@@ -10,3 +10,4 @@
 *.png
 *.gif
 *.bmp
+node_modules
