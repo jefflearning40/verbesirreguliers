@@ -1,5 +1,8 @@
+@use 'responsive';
+
+
 /* variables couleurs */
-@use url('variables.css');
+@use 'variables';
 
 /* effet de rotation pour le logo */
 .logo {
@@ -47,8 +50,9 @@ header {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Ajouter une ombre pour améliorer la lisibilité */
 }
 
+
 .jumbotron {
-    background-image: url('assets/images/bannerprojectenglish.jpg');
+    background-image: url('../images/bannerprojectenglish.jpg');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
