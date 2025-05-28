@@ -20,7 +20,7 @@
     <header role="banner" aria-label="En-tête principal">
         <nav class="navbar navbar-expand-lg navbar-light" role="navigation" aria-label="Navigation principale" style="background-color: var(--navbar-bgcolor);">
             <div class="container">
-                <a href="index.html">
+                <a href="index.php">
                     <img src="assets/images/english_flag.webp" alt="Logo" class="logo" id="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@
                         <img src="assets/images/verbe_irr.jpg" alt="Tableau des verbes irréguliers" class="exercice-icon">
                         <span data-i18n="verbsTable">Tableau des verbes</span>
                     </a>
-                    <a href="qcm.html" class="btn">
+                    <a href="qcm.php" class="btn">
                         <img src="assets/images/QCM.webp" alt="Commencer le QCM" class="exercice-icon">
                         <span data-i18n="startQuiz">Commencer le QCM</span>
                     </a>

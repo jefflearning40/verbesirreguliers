@@ -8,7 +8,7 @@
     <meta name="author" content="Jean Francois">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="assets/images/iconesite.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dist/css/theme.css">
     <title data-i18n="title">QCM Verbes irréguliers</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -20,7 +20,7 @@
     <header role="banner" aria-label="En-tête principal">
         <nav class="navbar navbar-expand-lg navbar-light" role="navigation" aria-label="Navigation principale" style="background-color: var(--navbar-bgcolor);">
             <div class="container">
-                <a href="index.html">
+                <a href="index.php">
                     <img src="assets/images/english_flag.webp" alt="Logo" class="logo" id="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html" data-i18n="home">Accueil</a>
+                            <a class="nav-link" href="index.php" data-i18n="home">Accueil</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="#" data-i18n="quiz">QCM</a>

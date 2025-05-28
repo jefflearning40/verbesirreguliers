@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 confirmButtonText: i18next.t("yesQuit")
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = 'qcm.html'; // Rediriger vers le menu initial du QCM
+                    window.location.href = 'qcm.php'; // Rediriger vers le menu initial du QCM
                 }
             });
         });
