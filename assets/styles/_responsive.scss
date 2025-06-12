@@ -1,0 +1,89 @@
+/* Smartphones petits (320px à 480px) */
+@media (max-width: 480px) {
+    .form-container {
+        width: 90% !important;
+        padding: 15px;
+    }
+
+    .exercice-buttons {
+        flex-direction: column;
+        gap: 15px;
+        .btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+        }
+    }
+
+    .exercice-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 8px;
+    }
+
+    .jumbotron h1 {
+        font-size: 2rem;
+    }
+
+    .container h1.display-4 {
+        font-size: 1.8rem;
+    }
+
+    .progress {
+        height: 25px;
+        .progress-bar {
+            line-height: 25px;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* iframe dans modal */
+    .modal-body iframe {
+        height: 300px;
+    }
+}
+
+/* Tablettes (481px à 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .form-container {
+        width: 70% !important;
+        padding: 20px;
+    }
+
+    .exercice-buttons {
+        flex-wrap: wrap;
+        gap: 20px;
+        .btn {
+            flex: 1 1 45%;
+            padding: 12px;
+            font-size: 1.1rem;
+        }
+    }
+
+    .exercice-icon {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 10px;
+    }
+
+    .jumbotron h1 {
+        font-size: 2.5rem;
+    }
+
+    .container h1.display-4 {
+        font-size: 2.2rem;
+    }
+
+    .progress {
+        height: 28px;
+        .progress-bar {
+            line-height: 28px;
+            font-size: 1rem;
+        }
+    }
+
+    /* iframe dans modal */
+    .modal-body iframe {
+        height: 400px;
+    }
+}

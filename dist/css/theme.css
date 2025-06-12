@@ -1,0 +1,250 @@
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/styles/base.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/* Smartphones petits (320px à 480px) */
+@media (max-width: 480px) {
+  .form-container {
+    width: 90% !important;
+    padding: 15px;
+  }
+  .exercice-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .exercice-buttons .btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+  }
+  .exercice-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+  .jumbotron h1 {
+    font-size: 2rem;
+  }
+  .container h1.display-4 {
+    font-size: 1.8rem;
+  }
+  .progress {
+    height: 25px;
+  }
+  .progress .progress-bar {
+    line-height: 25px;
+    font-size: 0.9rem;
+  }
+  /* iframe dans modal */
+  .modal-body iframe {
+    height: 300px;
+  }
+}
+/* Tablettes (481px à 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .form-container {
+    width: 70% !important;
+    padding: 20px;
+  }
+  .exercice-buttons {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .exercice-buttons .btn {
+    flex: 1 1 45%;
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+  .exercice-icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
+  }
+  .jumbotron h1 {
+    font-size: 2.5rem;
+  }
+  .container h1.display-4 {
+    font-size: 2.2rem;
+  }
+  .progress {
+    height: 28px;
+  }
+  .progress .progress-bar {
+    line-height: 28px;
+    font-size: 1rem;
+  }
+  /* iframe dans modal */
+  .modal-body iframe {
+    height: 400px;
+  }
+}
+/* variables couleurs */
+:root {
+  /* Couleurs */
+  --navbar-bgcolor:#81f0f9;
+  --footer-bgcolor: linear-gradient(to bottom, #81f0f9, #1a5fb4);
+  --translat-color:black;
+  --footer-color-p:#1a5fb4;
+  --container-bgcolor:#f9f9f9;
+  --container-border:#ccc;
+  --btn-close:red;
+  --btn-close-dark:#71131d;
+  --btn-color:white;
+  --jumbotron-shadow:rgba(0, 0, 0, 0.5);
+  --form-container-bg:rgba(255, 255, 255, 0.6);
+  --btn-colour:#ddd;
+}
+
+/* effet de rotation pour le logo */
+.logo {
+  transition: transform 1s;
+}
+.logo:hover {
+  transform: rotate(360deg);
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-5px);
+  }
+  40%, 80% {
+    transform: translateX(5px);
+  }
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* la vidéo de fond reste en arrière-plan */
+#backgroundVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* la vidéo reste en arrière-plan */
+}
+
+/* la barre de navigation reste au-dessus de la vidéo */
+header {
+  position: relative;
+  z-index: 1000; /* la barre de navigation est au-dessus de la vidéo */
+}
+
+/* h1 sous la barre de navigation */
+.container h1.display-4 {
+  color: white; /* Définir la couleur du texte en blanc */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Ajouter une ombre pour améliorer la lisibilité */
+}
+
+.jumbotron {
+  background-image: url(../js/../css/154a1a35b4b3b44a1315.jpg);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  color: var(--footer-color-p);
+  min-height: 100px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.jumbotron h1 {
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 4px var(--jumbotron-shadow);
+  font-size: 3rem;
+}
+
+.form-container {
+  display: none;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid var(--container-border);
+  background-color: var(--form-container-bg); /* Blanc avec une transparence de 0.8 */
+  width: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-close-modal {
+  background-color: var(--btn-close);
+  color: var(--btn-color);
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+.btn-close-modal:hover {
+  background-color: var(--btn-close);
+}
+
+.exercice-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+.exercice-buttons .btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--btn-color);
+  border: 1px solid var(--btn-colour);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  color: inherit;
+}
+.exercice-buttons .btn:hover {
+  background-color: var(--btn-colour);
+}
+
+.exercice-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.modal-lg {
+  max-width: 90%;
+}
+
+.modal-body iframe {
+  width: 100%;
+  height: 500px;
+}
+
+.progress {
+  margin-bottom: 10px;
+  height: 30px;
+}
+.progress .progress-bar {
+  line-height: 30px;
+  font-weight: bold;
+}
+
+/* Style pour le conteneur du QCM */
+#quizContainer {
+  background-color: var(--form-container-bg);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,61 @@
+├── .gitignore
+├── README.md
+├── arborescence.py
+├── assets
+│   ├── documentation
+│   │   └── verbe_irreguliers.pdf
+│   ├── images
+│   │   ├── QCM.webp
+│   │   ├── bannerprojectenglish.jpg
+│   │   ├── bg-banner.jpg
+│   │   ├── britbook.webp
+│   │   ├── busrouge.jpg
+│   │   ├── busrouge.png
+│   │   ├── cabine-rouge-modele-K2.jpg
+│   │   ├── english_flag.webp
+│   │   ├── iconesite.ico
+│   │   ├── verbe_irr.jpg
+│   │   ├── video2.mp4
+│   │   ├── video3.mp4
+│   │   ├── video4.mp4
+│   │   └── videobg.mp4
+│   ├── scripts
+│   │   ├── inscription.js
+│   │   ├── pdf.js
+│   │   ├── qcm.js
+│   │   ├── script.js
+│   │   ├── tableauverbe.js
+│   │   └── translate.js
+│   └── styles
+│       ├── _responsive.scss
+│       ├── _variables.scss
+│       └── base.scss
+├── dist
+│   ├── css
+│   │   ├── 154a1a35b4b3b44a1315.jpg
+│   │   └── theme.css
+│   └── js
+│       ├── dist
+│       │   └── css
+│       │       └── 154a1a35b4b3b44a1315.jpg
+│       ├── theme.js
+│       └── thirdPartyNotice.json
+├── eslint.config.js
+├── index.php
+├── inscription.js
+├── package-lock.json
+├── package.json
+├── pdf.js
+├── pdf_viewer.html
+├── php
+│   ├── pdf_viewer.php
+│   └── template
+│       ├── footer.php
+│       └── header.php
+├── qcm.js
+├── qcm.php
+├── script.js
+├── tableauverbe.js
+├── traitement_inscription.php
+├── translate.js
+└── webpack.config.cjs
