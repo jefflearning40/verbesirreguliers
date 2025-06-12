@@ -41,7 +41,7 @@ if ($env=="local"){
     define('DB_USER', 'root');
     define('DB_PASS', '');
 } elseif ($env=="prod") {
-    // https://phpmyadmin.hosting.ovh.net/index.php?route=/
+    // https://phpmyadmin.hosting.ovh.net/index.php
     define('DB_HOST', 'blobidesafec.mysql.db');
     define('DB_NAME', 'blobidesafec');
     define('DB_USER', 'blobidesafec');
